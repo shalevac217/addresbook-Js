@@ -6,7 +6,7 @@ To create the database, use the following SQL file:
 MySqlSetUp.sql
 ```
 
-##🚀 Running the Server
+## 🚀 Running the Server
 To start the server, run the following command:
 ```bash
 cd ./server && npm run dev
