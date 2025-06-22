@@ -682,6 +682,107 @@ password.onblur = <span class="hljs-function"><span class="hljs-params">()</span
 &nbsp; &nbsp; </li>
 &nbsp; &nbsp; <li><b>טיפול בשגיאות</b> – בלוק ה-<code>try...catch</code> עוטף את קריאת ה-<code>fetch</code> כדי ללכוד כל שגיאות רשת או שגיאות שעלולות להתרחש בטיפול בתגובת השרת. בכך הוא מאפשר להציג הודעה מתאימה וידידותית למשתמש במקרה של תקלה בלתי צפויה.</li>
 </ul>
+
+<h3>3.3 תצוגת אנשי קשר (contacts.html + contacts.js)</h3>
+
+<p><strong>מטרת הדף:</strong> הצגת כל אנשי הקשר של המשתמש המחובר, עם אפשרות לערוך, למחוק ולהוסיף איש קשר חדש.</p>
+
+<p><strong>רכיבי HTML עיקריים</strong>:</p>
+<pre><code>&lt;table&gt;
+    &lt;tr class="labels"&gt;
+        &lt;th&gt;שם פרטי&lt;/th&gt;
+        &lt;th&gt;טלפון&lt;/th&gt;
+        &lt;th&gt;כתובת&lt;/th&gt;
+        &lt;th&gt;פעולות&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div class="add-contact-container"&gt;
+    &lt;button id="addContactBtn"&gt;➕ הוספת איש קשר חדש&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>הסבר:</strong></p>
+<ul>
+  <li>הטבלה נבנית דינמית על בסיס אנשי הקשר של המשתמש המחובר.</li>
+  <li>כל שורה בטבלה מייצגת איש קשר – כולל שם, טלפון, כתובת וכפתורי פעולה.</li>
+  <li>הכפתור "➕ הוספת איש קשר חדש" מפנה לדף <code>newContact.html</code>.</li>
+</ul>
+
+<p><strong>קוד JavaScript (client/js/contacts.js)</strong>:</p>
+<pre><code>document.addEventListener("DOMContentLoaded", async function () {
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("userId");
+
+    if (!token || !userId) {
+        window.location.href = "/login";
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/contacts/user/${userId}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        const contacts = await response.json();
+        displayContacts(contacts);
+    } catch (error) {
+        console.error("שגיאה בטעינת אנשי הקשר:", error);
+    }
+
+    document.getElementById("addContactBtn").addEventListener("click", function () {
+        window.location.href = "/add-contact";
+    });
+});
+
+function displayContacts(contacts) {
+    const tableBody = document.querySelector("table");
+    contacts.forEach(contact =&gt; {
+        const row = document.createElement("tr");
+        row.classList.add("Data");
+
+        row.innerHTML = `
+            &lt;th&gt;${contact.full_name || "לא צוין"}&lt;/th&gt;
+            &lt;th&gt;${contact.phone_number || "לא צוין"}&lt;/th&gt;
+            &lt;th&gt;${contact.address || "לא צוין"}&lt;/th&gt;
+            &lt;th&gt;
+                &lt;button onclick="editContact('${contact.idaddresses}')"&gt;✏️ ערוך&lt;/button&gt;
+                &lt;button onclick="deleteContact('${contact.idaddresses}')"&gt;🗑️ מחק&lt;/button&gt;
+            &lt;/th&gt;
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function editContact(contactId) {
+    window.location.href = `/edit-contact?id=${contactId}`;
+}
+
+async function deleteContact(contactId) {
+    if (!confirm("האם אתה בטוח שברצונך למחוק את איש הקשר הזה?")) return;
+
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`/api/contacts/${contactId}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (!response.ok) throw new Error("מחיקה נכשלה");
+        location.reload();
+    } catch (error) {
+        console.error("שגיאה במחיקת איש הקשר:", error);
+    }
+}
+</code></pre>
+
+<p><strong>סיכום:</strong></p>
+<ul>
+  <li>הקובץ <code>contacts.js</code> טוען את אנשי הקשר עבור המשתמש המחובר ומציג אותם בטבלת HTML.</li>
+  <li>ניתן לערוך או למחוק כל איש קשר דרך הכפתורים בטבלה, עם אימות ואבטחה בעזרת JWT.</li>
+  <li>הקוד מתבסס על Fetch API ומטפל בשגיאות לצורך אבחנה ותגובה נכונה.</li>
+</ul>
+
 <h2 id="4-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A6%D7%93-%D7%94%D7%A9%D7%A8%D7%AA-backend">4. פיתוח צד השרת (Backend)</h2>
 <p>צד השרת בנוי ב-Node.js עם Express.js, ומשמש כ-API המקבל בקשות HTTP מצד הלקוח, מבצע לוגיקה עסקית, ומתקשר עם מסד הנתונים.</p>
 <h3 id="41-%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A9%D7%A8%D7%AA-nodejs">4.1 יצירת שרת (Node.js)</h3>
