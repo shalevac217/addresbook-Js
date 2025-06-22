@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/Users/Shalev/Documents/GitHub/addresbook-Js/1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>1.md</title>
+    
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+<style type="text/css" id="operaUserStyle"></style></head>
+
+<body>
+<style>
+  /* Override RTL for code blocks */
+  pre, code {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+</style>
+<div dir="rtl" align="right">
+<h1 id="%D7%A1%D7%A4%D7%A8-%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99%D7%9D-%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99">ספר טלפונים דיגיטלי</h1>
+<h2 id="%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%9C%D7%9B%D7%AA%D7%99%D7%91%D7%AA-%D7%AA%D7%99%D7%A7-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%9C%D7%A4%D7%99%D7%AA%D7%95%D7%97-web">מדריך לכתיבת תיק פרויקט לפיתוח Web</h2>
+<h2 id="1-%D7%90%D7%A4%D7%99%D7%95%D7%9F-%D7%95%D7%AA%D7%9B%D7%A0%D7%95%D7%9F-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98">1. אפיון ותכנון הפרויקט</h2>
+<h3 id="11-%D7%A9%D7%9D-%D7%95%D7%AA%D7%99%D7%90%D7%95%D7%A8-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98">1.1 שם ותיאור הפרויקט</h3>
+<ul>
+<li><strong>שם הפרויקט</strong>: ספר טלפונים</li>
+<li><strong>תיאור כללי</strong>: "ספר טלפונים דיגיטלי" הוא יישום ווב המאפשר למשתמשים לנהל באופן אישי את אנשי הקשר שלהם. המערכת מספקת פונקציונליות מלאה של יצירה, עריכה, הצגה ומחיקה של אנשי קשר, וכן ניהול משתמשים עם הרשמה והתחברות מאובטחת. הפרויקט שואף להחליף את הצורך בספרי טלפונים פיזיים או רשימות לא מאורגנות, ומספק ממשק אינטואיטיבי לחיפוש וניהול מהיר של מידע.</li>
+<li><strong>בעיה שהפרויקט פותר</strong>: נמאס לכם לדפדף בספר טלפונים עבה ומיושן? הפרויקט נותן מענה לצורך בכלי יעיל, מאובטח ונגיש לניהול אנשי קשר בעולם הדיגיטלי. הוא מאפשר שמירה מסודרת, גישה קלה ומהירה לפרטי קשר מכל מקום, ומונע אובדן מידע.</li>
+<li><strong>קהל יעד</strong>: המערכת מיועדת לכל אדם או עסק הזקוק לכלי פשוט ויעיל לארגון ושמירת אנשי קשר בצורה דיגיטלית, כולל משתמשים פרטיים, עובדים, או סטודנטים המעוניינים בניהול קל של רשת הקשרים שלהם.</li>
+<li><strong>תיאור שיווקי</strong>: <p class="description">
+            נמאס לך לדפדף בספר טלפונים עבה ומיושן?
+            <br/> באתר שלנו תמצא את ספר הטלפונים הדיגיטלי המתקדם ביותר, שיענה על כל צרכי החיפוש שלך.
+            <br/> ממשק המשתמש האינטואיטיבי והמנוע החכם יאפשרו לך למצוא את המידע שאתה צריך תוך שניות.
+        </p></li>
+</ul>
+<h3 id="12-%D7%93%D7%A8%D7%99%D7%A9%D7%95%D7%AA-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA">1.2 דרישות מערכת</h3>
+<ol style="direction: rtl; text-align: right;">
+&nbsp; &nbsp; <li>
+&nbsp; &nbsp; &nbsp; &nbsp; <b>דרישות פונקציונליות (מה המשתמש יכול לעשות?)</b>:
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש יכול להירשם (Signup) למערכת עם שם מלא, אימייל וסיסמה.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש יכול להתחבר (Login) למערכת באמצעות אימייל וסיסמה.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש המחובר יכול להוסיף איש קשר חדש הכולל: שם מלא, מספר טלפון וכתובת.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש המחובר יכול לצפות ברשימת כל אנשי הקשר שלו, המוצגת בצורת טבלה.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש המחובר יכול לערוך פרטים של איש קשר קיים.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המשתמש המחובר יכול למחוק איש קשר ספציפי.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המערכת מציגה הודעות שגיאה למשתמש במקרה של קלט לא תקין, שגיאות אימות, או בעיות אחרות בתקשורת עם השרת.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המערכת מבצעת ולידציה (אימות נתונים) בצד הלקוח (לדוגמה, בדיקת פורמט אימייל ואורך סיסמה).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>המערכת מבצעת אימות סיסמאות בעת הרשמה והתחברות (כולל השוואת סיסמאות).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+&nbsp; &nbsp; <li>
+&nbsp; &nbsp; &nbsp; &nbsp; <b>דרישות טכניות (באילו טכנולוגיות משתמשים?)</b>:
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>Frontend</b>: HTML5, CSS3, JavaScript (Vanilla JS), Custom Elements.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>Backend</b>: Node.js עם פריים-וורק Express.js.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>Database</b>: MySQL, עם Sequelize ORM לניהול אינטראקציות עם מסד הנתונים.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>אבטחה</b>: JSON Web Tokens (JWT) לאימות משתמשים, bcrypt להצפנת סיסמאות.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>ניהול חבילות</b>: npm.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>פיתוח</b>: Nodemon לסביבת פיתוח מהירה.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+</ol>
+<h2 id="2-%D7%AA%D7%9B%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A0%D7%94-%D7%94%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94">2. תכנון מבנה האפליקציה</h2>
+<h3 id="21-%D7%9E%D7%91%D7%A0%D7%94-%D7%AA%D7%99%D7%A7%D7%99%D7%99%D7%AA-%D7%94%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98">2.1 מבנה תיקיית הפרויקט</h3>
+</div>
+<pre class="hljs"><code><div>addresbook-Js/
+├── client/
+│ &nbsp; ├── CustomElements/
+│ &nbsp; │ &nbsp; └── nav/
+│ &nbsp; │ &nbsp; &nbsp; &nbsp; ├── nav.html
+│ &nbsp; │ &nbsp; &nbsp; &nbsp; └── nav.css
+│ &nbsp; │ &nbsp; └── nav.js
+│ &nbsp; ├── css/
+│ &nbsp; │ &nbsp; ├── 404.css
+│ &nbsp; │ &nbsp; ├── contacts.css
+│ &nbsp; │ &nbsp; ├── editContact.css
+│ &nbsp; │ &nbsp; ├── index.css
+│ &nbsp; │ &nbsp; ├── login.css
+│ &nbsp; │ &nbsp; ├── newContact.css
+│ &nbsp; │ &nbsp; └── signup.css
+│ &nbsp; ├── imgs/
+│ &nbsp; │ &nbsp; └── PictureForInspiration.jpg
+│ &nbsp; ├── js/
+│ &nbsp; │ &nbsp; ├── contacts.js
+│ &nbsp; │ &nbsp; ├── editContact.js
+│ &nbsp; │ &nbsp; ├── index.js
+│ &nbsp; │ &nbsp; ├── login.js
+│ &nbsp; │ &nbsp; ├── newContact.js
+│ &nbsp; │ &nbsp; └── signup.js
+│ &nbsp; └── pages/
+│ &nbsp; &nbsp; &nbsp; ├── 404.html
+│ &nbsp; &nbsp; &nbsp; ├── contacts.html
+│ &nbsp; &nbsp; &nbsp; ├── editContact.html
+│ &nbsp; &nbsp; &nbsp; ├── index.html
+│ &nbsp; &nbsp; &nbsp; ├── login.html
+│ &nbsp; &nbsp; &nbsp; ├── newContact.html
+│ &nbsp; &nbsp; &nbsp; └── signup.html
+├── server/
+│ &nbsp; ├── src/
+│ &nbsp; │ &nbsp; ├── config/
+│ &nbsp; │ &nbsp; │ &nbsp; └── database.js
+│ &nbsp; │ &nbsp; ├── controllers/
+│ &nbsp; │ &nbsp; │ &nbsp; ├── contactController.js
+│ &nbsp; │ &nbsp; │ &nbsp; └── userController.js
+│ &nbsp; │ &nbsp; ├── middleware/
+│ &nbsp; │ &nbsp; │ &nbsp; └── authMiddleware.js
+│ &nbsp; │ &nbsp; ├── models/
+│ &nbsp; │ &nbsp; │ &nbsp; ├── Contact.js
+│ &nbsp; │ &nbsp; │ &nbsp; ├── User.js
+│ &nbsp; │ &nbsp; │ &nbsp; └── index.js
+│ &nbsp; │ &nbsp; └── routes/
+│ &nbsp; │ &nbsp; &nbsp; &nbsp; ├── contactRoutes.js
+│ &nbsp; │ &nbsp; &nbsp; &nbsp; └── userRoutes.js
+│ &nbsp; ├── package.json
+│ &nbsp; └── server.js
+├── MySqlSetUp.sql
+└── README.md
+</div></code></pre>
+<div dir="rtl" align="right">
+<div dir="rtl" align="right">
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; <li><b>client/</b> – מכיל את כל קבצי צד הלקוח (Frontend) של היישום.
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>CustomElements/</b> – רכיבי ווב מותאמים אישית הניתנים לשימוש חוזר, כגון סרגל הניווט.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>css/</b> – קבצי סגנון CSS ייעודיים לכל דף.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>imgs/</b> – תמונות המשמשות ביישום, כולל תמונת ההשראה לעמוד הבית.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>js/</b> – קבצי JavaScript המטפלים בלוגיקת צד הלקוח, כמו ולידציה ואינטראקציה עם השרת.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>pages/</b> – קבצי HTML המהווים את מבנה הדפים השונים של היישום.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+&nbsp; &nbsp; <li><b>server/</b> – מכיל את כל קבצי צד השרת (Backend) של היישום.
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>src/</b> – קבצי קוד המקור העיקריים של השרת.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>config/</b> – קבצי תצורה, כולל הגדרות חיבור למסד הנתונים.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>controllers/</b> – מכיל את הלוגיקה העסקית והטיפול בבקשות HTTP עבור משתמשים ואנשי קשר (MVC Controller).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>middleware/</b> – פונקציות Middleware לטיפול בבקשות, כמו אימות משתמשים באמצעות JWT.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>models/</b> – הגדרות מודלים של מסד הנתונים באמצעות Sequelize ORM (MVC Model).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>routes/</b> – הגדרת נתיבי API לטיפול בבקשות HTTP (MVC Router).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>package.json</b> – קובץ הגדרות פרויקט ה-Node.js, המפרט את התלויות והסקריפטים להפעלה.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><b>server.js</b> – נקודת הכניסה העיקרית של יישום השרת, המגדירה את השרת, הנתיבים הראשיים וחיבורי ה-API.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+&nbsp; &nbsp; <li><b>MySqlSetUp.sql</b> – קובץ סקריפט SQL המשמש להגדרת מסד הנתונים והטבלאות ב-MySQL.</li>
+&nbsp; &nbsp; <li><b>README.md</b> – קובץ זה, המכיל תיעוד מקיף של הפרויקט.</li>
+</ul>
+
+<h3 id="22-%D7%AA%D7%A8%D7%A9%D7%99%D7%9D-%D7%A0%D7%99%D7%95%D7%95%D7%98-%D7%91%D7%99%D7%9F-%D7%9E%D7%A1%D7%9B%D7%99%D7%9D">2.2 תרשים ניווט בין מסכים</h3>
+<p>۱. <strong>מסכים עיקריים</strong>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד הבית (<code>index.html</code>)</strong>: דף נחיתה ומידע כללי על ספר הטלפונים.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד הרשמה (<code>signup.html</code>)</strong>: טופס להרשמת משתמשים חדשים.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד התחברות (<code>login.html</code>)</strong>: טופס להתחברות משתמשים קיימים.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד אנשי קשר (<code>contacts.html</code>)</strong>: מציג את רשימת אנשי הקשר של המשתמש המחובר.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד הוספת איש קשר (<code>newContact.html</code>)</strong>: טופס להוספת איש קשר חדש לרשימה.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד עריכת איש קשר (<code>editContact.html</code>)</strong>: טופס לעריכת פרטים של איש קשר קיים (נגיש דרך עמוד אנשי הקשר).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>עמוד שגיאה 404 (<code>404.html</code>)</strong>: מוצג כאשר המשתמש מנסה לגשת לדף שאינו קיים.</p>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, direction: 'RTL' });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      padding: 2rem;
+    }
+    .mermaid {
+      direction: ltr; /* Mermaid diagrams are LTR even in RTL pages */
+    }
+  </style>
+<div class="mermaid" data-processed="true"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-8 -8 611 629" style="max-width: 611px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1750600562537"><style>#mermaid-1750600562537{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1750600562537 .error-icon{fill:#552222;}#mermaid-1750600562537 .error-text{fill:#552222;stroke:#552222;}#mermaid-1750600562537 .edge-thickness-normal{stroke-width:2px;}#mermaid-1750600562537 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1750600562537 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1750600562537 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1750600562537 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1750600562537 .marker{fill:#333333;stroke:#333333;}#mermaid-1750600562537 .marker.cross{stroke:#333333;}#mermaid-1750600562537 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1750600562537 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1750600562537 .cluster-label text{fill:#333;}#mermaid-1750600562537 .cluster-label span,#mermaid-1750600562537 p{color:#333;}#mermaid-1750600562537 .label text,#mermaid-1750600562537 span,#mermaid-1750600562537 p{fill:#333;color:#333;}#mermaid-1750600562537 .node rect,#mermaid-1750600562537 .node circle,#mermaid-1750600562537 .node ellipse,#mermaid-1750600562537 .node polygon,#mermaid-1750600562537 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1750600562537 .flowchart-label text{text-anchor:middle;}#mermaid-1750600562537 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1750600562537 .node .label{text-align:center;}#mermaid-1750600562537 .node.clickable{cursor:pointer;}#mermaid-1750600562537 .arrowheadPath{fill:#333333;}#mermaid-1750600562537 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1750600562537 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1750600562537 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1750600562537 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1750600562537 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1750600562537 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1750600562537 .cluster text{fill:#333;}#mermaid-1750600562537 .cluster span,#mermaid-1750600562537 p{color:#333;}#mermaid-1750600562537 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1750600562537 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1750600562537 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="6" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1750600562537_flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1750600562537_flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1750600562537_flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1750600562537_flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1750600562537_flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1750600562537_flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M280.25,37L280.25,41.167C280.25,45.333,280.25,53.667,280.316,61.2C280.382,68.734,280.514,75.467,280.58,78.834L280.646,82.201"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0" d="M221.859,227.609L198.841,243.341C175.823,259.073,129.786,290.536,106.768,311.385C83.75,332.233,83.75,342.467,83.75,347.583L83.75,352.7"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-E" id="L-C-E-0" d="M83.75,395L83.75,401C83.75,407,83.75,419,97.438,430.662C111.127,442.325,138.503,453.649,152.192,459.312L165.88,464.974"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-D" id="L-B-D-0" d="M256.781,262.531L253.526,272.442C250.271,282.354,243.76,302.177,240.505,317.205C237.25,332.233,237.25,342.467,237.25,347.583L237.25,352.7"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-E" id="L-D-E-0" d="M237.25,395L237.25,401C237.25,407,237.25,419,235.183,430.18C233.116,441.359,228.982,451.718,226.915,456.898L224.848,462.078"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-E" id="L-B-E-0" d="M311.638,255.612L316.573,266.677C321.509,277.741,331.379,299.871,336.315,320.019C341.25,340.167,341.25,358.333,341.25,376.5C341.25,394.667,341.25,412.833,328.216,427.565C315.183,442.297,289.116,453.595,276.082,459.244L263.049,464.892"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-F" id="L-E-F-0" d="M163.734,504L146.945,510C130.156,516,96.578,528,87.411,539.484C78.245,550.968,93.49,561.936,101.112,567.421L108.734,572.905"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-G" id="L-E-G-0" d="M265.229,504L281.358,510C297.486,516,329.743,528,353.601,539.489C377.459,550.977,392.917,561.954,400.647,567.443L408.376,572.931"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-E" id="L-E-E-0" d="M271,476.066L279.889,474.555C288.778,473.044,306.556,470.022,317.667,468.511C328.778,467,333.222,467,337.667,470.083C342.111,473.167,346.556,479.333,346.556,485.5C346.556,491.667,342.111,497.833,337.667,500.917C333.222,504,328.778,504,318.538,502.637C308.297,501.274,292.261,498.548,284.243,497.185L276.225,495.822"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-E" id="L-F-E-0" d="M164.463,576L172.803,570C181.142,564,197.821,552,206.254,540.883C214.688,529.766,214.876,519.533,214.969,514.416L215.063,509.299"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-E" id="L-G-E-0" d="M465.651,576L474.376,570C483.101,564,500.55,552,468.978,538.74C437.405,525.48,356.811,510.959,316.513,503.699L276.216,496.439"></path><path marker-end="url(#mermaid-1750600562537_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-any_invalid_path LE-H" id="L-any_invalid_path-H-0" d="M495.75,37L495.75,41.167C495.75,45.333,495.75,53.667,495.75,74.617C495.75,95.567,495.75,129.133,495.75,145.917L495.75,162.7"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignobject></g></g><g transform="translate(83.75, 322)" class="edgeLabel"><g transform="translate(-30.5, -11)" class="label"><foreignobject height="22" width="61"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">לא מחובר</span></div></foreignobject></g></g><g transform="translate(83.75, 431)" class="edgeLabel"><g transform="translate(-56.5, -11)" class="label"><foreignobject height="22" width="113"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">התחברות מוצלחת</span></div></foreignobject></g></g><g transform="translate(237.25, 322)" class="edgeLabel"><g transform="translate(-30.5, -11)" class="label"><foreignobject height="22" width="61"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">לא מחובר</span></div></foreignobject></g></g><g transform="translate(237.25, 431)" class="edgeLabel"><g transform="translate(-51, -11)" class="label"><foreignobject height="22" width="102"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">הרשמה מוצלחת</span></div></foreignobject></g></g><g transform="translate(341.25, 376.5)" class="edgeLabel"><g transform="translate(-20, -11)" class="label"><foreignobject height="22" width="40"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">מחובר</span></div></foreignobject></g></g><g transform="translate(63, 540)" class="edgeLabel"><g transform="translate(-63, -11)" class="label"><foreignobject height="22" width="126"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">הוסף איש קשר חדש</span></div></foreignobject></g></g><g transform="translate(362, 540)" class="edgeLabel"><g transform="translate(-59, -11)" class="label"><foreignobject height="22" width="118"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">ערוך איש קשר קיים</span></div></foreignobject></g></g><g transform="translate(351, 485.5)" class="edgeLabel"><g transform="translate(-45, -11)" class="label"><foreignobject height="22" width="90"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">מחק איש קשר</span></div></foreignobject></g></g><g transform="translate(214.5, 540)" class="edgeLabel"><g transform="translate(-68.5, -11)" class="label"><foreignobject height="22" width="137"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">שמירת איש קשר חדש</span></div></foreignobject></g></g><g transform="translate(518, 540)" class="edgeLabel"><g transform="translate(-77, -11)" class="label"><foreignobject height="22" width="154"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">שמירת שינויים לאיש קשר</span></div></foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g transform="translate(280.25, 18.5)" data-id="A" data-node="true" id="flowchart-A-0" class="node default default flowchart-label"><rect height="37" width="81" y="-18.5" x="-40.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-33, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="66"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד הבית</span></div></foreignobject></g></g><g transform="translate(280.25, 186.5)" data-id="B" data-node="true" id="flowchart-B-1" class="node default flowchart-label"><polygon style="" transform="translate(-99.5,99.5)" class="label-container" points="99.5,0 199,-99.5 99.5,-199 0,-99.5"></polygon><g transform="translate(-73.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="147"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">האם המשתמש מחובר؟</span></div></foreignobject></g></g><g transform="translate(83.75, 376.5)" data-id="C" data-node="true" id="flowchart-C-3" class="node default default flowchart-label"><rect height="37" width="109" y="-18.5" x="-54.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-47, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="94"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד התחברות</span></div></foreignobject></g></g><g transform="translate(215.5, 485.5)" data-id="E" data-node="true" id="flowchart-E-5" class="node default default flowchart-label"><rect height="37" width="111" y="-18.5" x="-55.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-48, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="96"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד אנשי קשר</span></div></foreignobject></g></g><g transform="translate(237.25, 376.5)" data-id="D" data-node="true" id="flowchart-D-7" class="node default default flowchart-label"><rect height="37" width="98" y="-18.5" x="-49" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-41.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="83"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד הרשמה</span></div></foreignobject></g></g><g transform="translate(138.75, 594.5)" data-id="F" data-node="true" id="flowchart-F-13" class="node default default flowchart-label"><rect height="37" width="151" y="-18.5" x="-75.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-68, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="136"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד הוספת איש קשר</span></div></foreignobject></g></g><g transform="translate(438.75, 594.5)" data-id="G" data-node="true" id="flowchart-G-15" class="node default default flowchart-label"><rect height="37" width="146" y="-18.5" x="-73" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-65.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="131"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד עריכת איש קשר</span></div></foreignobject></g></g><g transform="translate(495.75, 186.5)" data-id="H" data-node="true" id="flowchart-H-22" class="node default default flowchart-label"><rect height="37" width="132" y="-18.5" x="-66" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-58.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="117"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">עמוד לא נמצא 404</span></div></foreignobject></g></g><g transform="translate(495.75, 18.5)" data-id="any_invalid_path" data-node="true" id="flowchart-any_invalid_path-23" class="node default default flowchart-label"><rect height="37" width="116" y="-18.5" x="-58" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-50.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="101"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">כל נתיב לא מוכר</span></div></foreignobject></g></g></g></g></g></svg></div>
+<h2 id="3-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A6%D7%93-%D7%94%D7%9C%D7%A7%D7%95%D7%97-frontend">3. פיתוח צד הלקוח (Frontend)</h2>
+<p>צד הלקוח של היישום בנוי ב-HTML עבור המבנה, CSS עבור העיצוב, ו-JavaScript (Vanilla JS) עבור הלוגיקה האינטראקטיבית וקריאות ה-API.</p>
+<h3 id="31-%D7%93%D7%A4%D7%99-html">3.1 דפי HTML</h3>
+<p><strong>דפים עיקריים</strong>:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; <li><code>index.html</code> – עמוד הבית.</li>
+&nbsp; &nbsp; <li><code>login.html</code> – טופס התחברות.</li>
+&nbsp; &nbsp; <li><code>signup.html</code> – טופס הרשמה.</li>
+&nbsp; &nbsp; <li><code>contacts.html</code> – תצוגת רשימת אנשי הקשר.</li>
+&nbsp; &nbsp; <li><code>newContact.html</code> – טופס להוספת איש קשר.</li>
+&nbsp; &nbsp; <li><code>editContact.html</code> – טופס לעריכת איש קשר.</li>
+&nbsp; &nbsp; <li><code>404.html</code> – עמוד שגיאה.</li>
+</ul>
+</div>
+<p><strong>קטע קוד לדוגמה - דף התחברות (<code>login.html</code>)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"he"</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"rtl"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../css/login.css"</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>ספר טלפונים<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">custom-nav</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">custom-nav</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../CustomElements/nav/nav.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main_container"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"direction: rtl; text-align: right;"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>התחברות<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input_container"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>אימייל :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input_container"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"password"</span>&gt;</span>סיסמה :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input_container"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"התחבר"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"err"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"err"</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../js/login.js"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<div dir="rtl" align="right">
+<p>הסבר מפורט על רכיבים בדף login.html:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; <li><code>&lt;custom-nav&gt;&lt;/custom-nav&gt;</code> - רכיב ווב (Custom Element) המשמש כסרגל ניווט עליון בכל דפי האתר. הוא מאפשר יצירת רכיבים עצמאיים ושימוש חוזר בקוד.</li>
+&nbsp; &nbsp; <li><code>&lt;div class="main_container"&gt;</code> - עוטף את תוכן הטופס ומספק בסיס לעיצוב מרכזי.</li>
+&nbsp; &nbsp; <li><code>&lt;form&gt;</code> - אלמנט טופס HTML המאגד את שדות הקלט. הוא אינו מציין <code>action</code> או <code>method</code> שכן שליחת הנתונים מטופלת באופן אסינכרוני באמצעות JavaScript (Fetch API).</li>
+&nbsp; &nbsp; <li><code>&lt;h2&gt;התחברות&lt;/h2&gt;</code> - כותרת הדף.</li>
+&nbsp; &nbsp; <li><code>&lt;div class="input_container"&gt;</code> - קונטיינר לכל שדה קלט ותוויתו, לצורך עיצוב וסידור.</li>
+&nbsp; &nbsp; <li><code>&lt;label for="email"&gt;</code> - תווית טקסט המשויכת לשדה הקלט "אימייל" באמצעות ה-<code>for</code> וה-<code>id</code>, לשיפור הנגישות.</li>
+&nbsp; &nbsp; <li><code>&lt;input type="email" id="email" name="email"&gt;</code> - שדה קלט המיועד לכתובת אימייל. ה-<code>id</code> מאפשר גישה לשדה באמצעות JavaScript.</li>
+&nbsp; &nbsp; <li><code>&lt;input type="password" id="password" name="password"&gt;</code> - שדה קלט המיועד לסיסמה, המסתיר את התווים שהוזנו.</li>
+&nbsp; &nbsp; <li><code>&lt;input type="submit" class="submit" value="התחבר"&gt;</code> - כפתור שליחה שבעת לחיצה עליו מפעיל את לוגיקת ה-JavaScript לטיפול בטופס.</li>
+&nbsp; &nbsp; <li><code>&lt;div class="err" id="err"&gt;&lt;/div&gt;</code> - אזור ריק המשמש להצגת הודעות שגיאה למשתמש על ידי JavaScript.</li>
+&nbsp; &nbsp; <li><code>&lt;script src="../js/login.js"&gt;&lt;/script&gt;</code> - קישור לקובץ JavaScript המכיל את כל הלוגיקה של דף ההתחברות.</li>
+</ul>
+
+<h3 id="32-%D7%A7%D7%95%D7%93-javascript-frontend">3.2 קוד JavaScript (Frontend)</h3>
+<p>קובצי ה-JavaScript בצד הלקוח מטפלים באינטראקציות של המשתמש, ולידציית קלט, ושליחת בקשות ל-API של השרת.</p>
+<p><strong>קטע קוד לדוגמה - לוגיקת התחברות (login.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> email = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'email'</span>);
+<span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'password'</span>);
+<span class="hljs-keyword">const</span> err = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'err'</span>);
+
+<span class="hljs-comment">// פונקציות ולידציה בסיסיות בעת יציאה משדה הקלט (onblur)</span>
+email.onblur = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+&nbsp; &nbsp; <span class="hljs-keyword">const</span> emailValue = email.value.trim();
+&nbsp; &nbsp; <span class="hljs-keyword">let</span> errors = [];
+&nbsp; &nbsp; err.textContent = <span class="hljs-string">""</span>; <span class="hljs-comment">// ניקוי שגיאות קודמות</span>
+&nbsp; &nbsp; <span class="hljs-keyword">if</span> (emailValue === <span class="hljs-string">""</span>) {
+&nbsp; &nbsp; &nbsp; &nbsp; errors.push(<span class="hljs-string">"לא הכנסת אימייל"</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; email.classList.remove(<span class="hljs-string">'valid'</span>, <span class="hljs-string">'invalid'</span>);
+&nbsp; &nbsp; } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>.test(emailValue)) {
+&nbsp; &nbsp; &nbsp; &nbsp; errors.push(<span class="hljs-string">"האימייל שהוכנס אינו תקין"</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; email.classList.add(<span class="hljs-string">'invalid'</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; email.classList.remove(<span class="hljs-string">'valid'</span>);
+&nbsp; &nbsp; } <span class="hljs-keyword">else</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; email.classList.remove(<span class="hljs-string">'invalid'</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; email.classList.add(<span class="hljs-string">'valid'</span>);
+&nbsp; &nbsp; }
+&nbsp; &nbsp; err.textContent = errors.join(<span class="hljs-string">"\n"</span>); <span class="hljs-comment">// הצגת השגיאות</span>
+};
+
+password.onblur = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+&nbsp; &nbsp; <span class="hljs-keyword">const</span> passwordValue = password.value;
+&nbsp; &nbsp; <span class="hljs-keyword">let</span> errors = [];
+&nbsp; &nbsp; err.textContent = <span class="hljs-string">""</span>;
+&nbsp; &nbsp; <span class="hljs-keyword">if</span> (passwordValue.length &lt; <span class="hljs-number">8</span>) {
+&nbsp; &nbsp; &nbsp; &nbsp; errors.push(<span class="hljs-string">"הסיסמה חייבת להיות לפחות 8 תווים"</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; password.classList.add(<span class="hljs-string">'invalid'</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; password.classList.remove(<span class="hljs-string">'valid'</span>);
+&nbsp; &nbsp; } <span class="hljs-keyword">else</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; password.classList.remove(<span class="hljs-string">'invalid'</span>);
+&nbsp; &nbsp; &nbsp; &nbsp; password.classList.add(<span class="hljs-string">'valid'</span>);
+&nbsp; &nbsp; }
+&nbsp; &nbsp; err.textContent = errors.join(<span class="hljs-string">"\n"</span>);
+};
+
+<span class="hljs-comment">// מטפל בשליחת הטופס</span>
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"form"</span>).addEventListener(<span class="hljs-string">"submit"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+&nbsp; &nbsp; event.preventDefault(); <span class="hljs-comment">// מונע את טעינת הדף מחדש</span>
+
+&nbsp; &nbsp; <span class="hljs-keyword">const</span> emailValue = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"email"</span>).value;
+&nbsp; &nbsp; <span class="hljs-keyword">const</span> passwordValue = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"password"</span>).value;
+&nbsp; &nbsp; <span class="hljs-keyword">const</span> errorDiv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"err"</span>);
+
+&nbsp; &nbsp; <span class="hljs-keyword">try</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-comment">// שליחת בקשת POST ל-API של השרת</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'/api/users/login'</span>, {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-attr">method</span>: <span class="hljs-string">"POST"</span>,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-attr">headers</span>: { <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json"</span> },
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify({ <span class="hljs-attr">email</span>: emailValue, <span class="hljs-attr">password</span>: passwordValue })
+&nbsp; &nbsp; &nbsp; &nbsp; });
+
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.json(); <span class="hljs-comment">// ניתוח תגובת השרת כ-JSON</span>
+
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword">if</span> (response.ok) { <span class="hljs-comment">// אם התגובה חיובית (קוד סטטוס 2xx)</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; localStorage.setItem(<span class="hljs-string">"token"</span>, data.token); &nbsp;<span class="hljs-comment">// שמירת ה-JWT ב-localStorage</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; localStorage.setItem(<span class="hljs-string">"userId"</span>, data.userId); <span class="hljs-comment">// שמירת מזהה המשתמש</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">"contacts"</span>; <span class="hljs-comment">// ניווט לעמוד אנשי הקשר</span>
+&nbsp; &nbsp; &nbsp; &nbsp; } <span class="hljs-keyword">else</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; errorDiv.innerText = data.error; <span class="hljs-comment">// הצגת הודעת שגיאה מהשרת</span>
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; } <span class="hljs-keyword">catch</span> (error) {
+&nbsp; &nbsp; &nbsp; &nbsp; errorDiv.innerText = <span class="hljs-string">"שגיאה בהתחברות. נסה שוב."</span>;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-built_in">console</span>.error(<span class="hljs-string">"Login error:"</span>, error);
+&nbsp; &nbsp; }
+});
+</div></code></pre>
+<div dir="rtl" align="right">
+<p>הסבר מפורט על <code>login.js</code>:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; <li><b>ולידציית קלט בצד הלקוח</b> – הפונקציות המטפלות באירוע <code>onblur</code> עבור שדות האימייל והסיסמה מספקות למשתמש משוב מיידי בנוגע לתקינות הקלט. זה כולל אימות פורמט אימייל תקין (באמצעות <code>regex</code>) ובדיקה שאורך הסיסמה עומד בדרישת מינימום התווים.</li>
+&nbsp; &nbsp; <li><b>מניעת רענון דף</b> – השימוש ב-<code>event.preventDefault()</code> בתוך פונקציית שליחת הטופס מונע את ההתנהגות הסטנדרטית של הדפדפנים, שהיא שליחה סינכרונית ורענון מלא של הדף. פעולה זו מאפשרת שליחת נתונים אסינכרונית וחלקה לשרת.</li>
+&nbsp; &nbsp; <li><b>Fetch API</b> – ממשק ה-<code>Fetch API</code> משמש לשליחת בקשות HTTP ל-API של השרת. במקרה זה, נשלחת בקשת <code>POST</code> לכתובת <code>/api/users/login</code> יחד עם נתוני המשתמש בפורמט <code>JSON</code> בגוף הבקשה.</li>
+&nbsp; &nbsp; <li><b>טיפול בתגובת השרת</b>:
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>הקוד בודק את סטטוס התגובה שהתקבלה מהשרת באמצעות המאפיין <code>response.ok</code>.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>במקרה של התחברות מוצלחת, השרת מחזיר <code>token</code> מסוג JWT (JSON Web Token) ומזהה משתמש (<code>userId</code>).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>נתונים חשובים אלו נשמרים ב-<code>localStorage</code> של הדפדפן, מה שמאפשר שמירה על מצב ההתחברות גם במעבר בין דפים שונים.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>לאחר שמירת הנתונים, המשתמש מנותב אוטומטית לעמוד <code>contacts</code> (אנשי קשר).</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li>במקרה של שגיאה בהתחברות (לדוגמה, פרטי כניסה שגויים), הודעת השגיאה המתאימה (שנשלחה מהשרת) מוצגת ישירות למשתמש.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+&nbsp; &nbsp; <li><b>טיפול בשגיאות</b> – בלוק ה-<code>try...catch</code> עוטף את קריאת ה-<code>fetch</code> כדי ללכוד כל שגיאות רשת או שגיאות שעלולות להתרחש בטיפול בתגובת השרת. בכך הוא מאפשר להציג הודעה מתאימה וידידותית למשתמש במקרה של תקלה בלתי צפויה.</li>
+</ul>
+<h2 id="4-%D7%A4%D7%99%D7%AA%D7%95%D7%97-%D7%A6%D7%93-%D7%94%D7%A9%D7%A8%D7%AA-backend">4. פיתוח צד השרת (Backend)</h2>
+<p>צד השרת בנוי ב-Node.js עם Express.js, ומשמש כ-API המקבל בקשות HTTP מצד הלקוח, מבצע לוגיקה עסקית, ומתקשר עם מסד הנתונים.</p>
+<h3 id="41-%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A9%D7%A8%D7%AA-nodejs">4.1 יצירת שרת (Node.js)</h3>
+</div>
+
+<p><strong>קטע קוד לדוגמה - קובץ השרת הראשי (server.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> sequelize = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/config/database'</span>); <span class="hljs-comment">// חיבור למסד הנתונים</span>
+<span class="hljs-keyword">const</span> userRoutes = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/routes/userRoutes'</span>); <span class="hljs-comment">// נתיבי API למשתמשים</span>
+<span class="hljs-keyword">const</span> contactRoutes = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/routes/contactRoutes'</span>); <span class="hljs-comment">// נתיבי API לאנשי קשר</span>
+
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>; <span class="hljs-comment">// פורט ההאזנה של השרת</span>
+<span class="hljs-keyword">const</span> app = express(); <span class="hljs-comment">// יצירת מופע של אפליקציית Express</span>
+
+<span class="hljs-comment">// Middleware לטיפול בבקשות JSON - מאפשר לשרת לקבל נתונים בפורמט JSON בגוף הבקשה.</span>
+app.use(express.json());
+
+<span class="hljs-comment">// הגשת קבצים סטטיים (HTML, CSS, JS, תמונות) מתיקיית ה-client לדפדפן.</span>
+app.use(express.static(path.join(__dirname, <span class="hljs-string">'../client'</span>)));
+
+<span class="hljs-comment">// הגדרת נתיבי API עיקריים וקישורם לראוטרים המתאימים.</span>
+app.use(<span class="hljs-string">'/api/users'</span>, userRoutes);
+app.use(<span class="hljs-string">'/api/contacts'</span>, contactRoutes);
+
+<span class="hljs-comment">// הגדרת נתיבים ספציפיים להגשת דפי HTML.</span>
+app.get(<span class="hljs-string">"/nav.html"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/CustomElements/nav/nav.html"</span>));
+});
+app.get(<span class="hljs-string">"/nav.css"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/CustomElements/nav/nav.css"</span>));
+});
+app.get(<span class="hljs-string">"/"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/index.html"</span>));
+});
+app.get(<span class="hljs-string">"/login"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/login.html"</span>));
+});
+app.get(<span class="hljs-string">"/signup"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/signup.html"</span>));
+});
+app.get(<span class="hljs-string">"/contacts"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/contacts.html"</span>));
+});
+app.get(<span class="hljs-string">"/add-contact"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/newContact.html"</span>));
+});
+app.get(<span class="hljs-string">"/edit-contact"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/editContact.html"</span>));
+});
+
+<span class="hljs-comment">// נתיב "Catch-all" לטיפול בכל בקשה שלא תאמה נתיב קודם, ומגיש את דף השגיאה 404.</span>
+app.get(<span class="hljs-string">"*"</span>, (req, res) =&gt; {
+&nbsp; &nbsp; res.sendFile(path.join(__dirname, <span class="hljs-string">"../client/pages/404.html"</span>));
+})
+
+<span class="hljs-comment">// סנכרון מסד הנתונים עם המודלים של Sequelize (יצירת טבלאות אם אינן קיימות)</span>
+<span class="hljs-comment">// ולאחר מכן, הפעלת השרת.</span>
+sequelize.sync()
+&nbsp; &nbsp; .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Database synced'</span>))
+&nbsp; &nbsp; .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Database sync error:'</span>, err));
+
+app.listen(port, () =&gt; &nbsp;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server listening at Port <span class="hljs-subst">${port}</span> and url http://localhost:<span class="hljs-subst">${port}</span>`</span>));
+</div></code></pre>
+<div dir="rtl" align="right">
+<p>הסבר מפורט על server.js:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; <li><b>ייבוא מודולים</b>: הקובץ מייבא את ספריות הליבה (<code>express</code>, <code>path</code>), את אובייקט החיבור למסד הנתונים (<code>sequelize</code>), ואת אובייקטי הראוטר המוגדרים בקבצים נפרדים עבור משתמשים ואנשי קשר.</li>
+&nbsp; &nbsp; <li><b>הגדרת פורט והפעלת Express</b>: מוגדר פורט 3000 עבור השרת, ומופעל מופע חדש של אפליקציית Express, המהווה את הבסיס לשרת ה-Web.</li>
+&nbsp; &nbsp; <li><b>Middleware - <code>express.json()</code></b>: זהו Middleware מובנה ב-Express המאפשר לשרת לפרסר (לנתח) גופי בקשות נכנסות בפורמט JSON. ללא Middleware זה, הנתונים הנשלחים ב-<code>req.body</code> היו מופיעים כריקים.</li>
+&nbsp; &nbsp; <li><b>הגשת קבצים סטטיים</b>: <code>app.use(express.static(...))</code> מגדיר את תיקיית <code>client</code> כתיקייה ממנה השרת יכול להגיש קבצים סטטיים ישירות לדפדפן (כמו קבצי HTML, CSS, JavaScript, תמונות וכו'). זה מאפשר לדפדפן לטעון את כל נכסי ה-Frontend של האתר.</li>
+&nbsp; &nbsp; <li><b>הגדרת נתיבי API</b>: <code>app.use('/api/users', userRoutes)</code> ו-<code>app.use('/api/contacts', contactRoutes)</code> מנתבים בקשות HTTP מתאימות (לדוגמה, כל בקשה שמתחילה ב<code>/api/users/...</code>) לקובצי ראוטר ספציפיים (<code>userRoutes.js</code>, <code>contactRoutes.js</code>). קבצים אלו מכילים את הלוגיקה העסקית לטיפול בבקשות ה-API השונות, והפרדה זו משפרת באופן ניכר את מודולריות הקוד ונוחות התחזוקה.</li>
+&nbsp; &nbsp; <li><b>הגשת דפי HTML</b>: קיימות הגדרות <code>app.get()</code> ספציפיות המנתבות בקשות לכתובות URL מסוימות (כמו <code>/login</code>, <code>/contacts</code>) לקובצי ה-HTML המתאימים הממוקמים בתיקיית <code>client/pages</code>. זה מאפשר לשרת להגיש את דפי האתר הדינמיים.</li>
+&nbsp; &nbsp; <li><b>טיפול ב-404</b>: <code>app.get("*", ...)</code> הוא נתיב "Catch-all". אם בקשה מגיעה לשרת ולא תואמת אף אחד מהנתיבים שהוגדרו קודם לכן, היא תופנה אוטומטית לדף השגיאה <code>404.html</code>, מה שמשפר את חווית המשתמש במקרה של כתובת לא קיימת.</li>
+&nbsp; &nbsp; <li><b>סנכרון מסד הנתונים והפעלת השרת</b>:
+&nbsp; &nbsp; &nbsp; &nbsp; <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><code>sequelize.sync()</code>: פונקציה זו של Sequelize מנסה לסנכרן את המודלים המוגדרים בקוד עם מסד הנתונים. אם הטבלאות אינן קיימות, היא תיצור אותן על בסיס הגדרות המודל. זו דרך נוחה ושימושית להגדיר את סכימת הנתונים בסביבת פיתוח.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <li><code>app.listen(port, ...)</code>: מפעיל את השרת כך שיאזין לבקשות HTTP בפורט שצוין (3000). כאשר השרת מופעל בהצלחה, הודעה מתאימה מודפסת לקונסול, המציינת שהשרת פועל ומוכן לקבל בקשות.</li>
+&nbsp; &nbsp; &nbsp; &nbsp; </ul>
+&nbsp; &nbsp; </li>
+</ul>
+</div>
+<h2 id="5-%D7%AA%D7%9B%D7%A0%D7%95%D7%9F-%D7%9E%D7%A1%D7%93-%D7%94%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D">5. תכנון מסד הנתונים</h2>
+<p>מסד הנתונים MySQL מאחסן את נתוני המשתמשים ואנשי הקשר. Sequelize ORM משמש כגשר בין קוד ה-Node.js למסד הנתונים, ומאפשר אינטראקציה קלה ויעיל</p>
+<h3 id="51-%D7%9E%D7%91%D7%A0%D7%94-%D7%9E%D7%A1%D7%93-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D">5.1 מבנה מסד נתונים</h3>
+<p><strong>סקריפט SQL ליצירת הטבלאות (MySqlSetUp.sql)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">-- יצירת משתמש ייעודי עבור היישום והענקת הרשאות</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">'shaleva217'</span>@<span class="hljs-string">'localhost'</span> <span class="hljs-keyword">IDENTIFIED</span> <span class="hljs-keyword">BY</span> <span class="hljs-string">'123456'</span>;
+<span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">PRIVILEGES</span> <span class="hljs-keyword">ON</span> addresbook.* <span class="hljs-keyword">TO</span> <span class="hljs-string">'shaleva217'</span>@<span class="hljs-string">'localhost'</span>;
+<span class="hljs-keyword">FLUSH</span> <span class="hljs-keyword">PRIVILEGES</span>;
+
+<span class="hljs-comment">-- מחיקת טבלת 'contacts' אם קיימת (לצרכי פיתוח/ניקוי סביבה)</span>
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`contacts`</span>;
+
+<span class="hljs-comment">-- יצירת טבלת 'contacts' (אנשי קשר)</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`contacts`</span> (
+  <span class="hljs-string">`idaddresses`</span> <span class="hljs-built_in">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT, <span class="hljs-comment">-- מזהה ייחודי של איש הקשר (מפתח ראשי)</span>
+  <span class="hljs-string">`user_id`</span> <span class="hljs-built_in">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,                    <span class="hljs-comment">-- מפתח זר המצביע למשתמש שיצר את איש הקשר</span>
+  <span class="hljs-string">`full_name`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,     <span class="hljs-comment">-- שם מלא של איש הקשר</span>
+  <span class="hljs-string">`phone_number`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,   <span class="hljs-comment">-- מספר טלפון</span>
+  <span class="hljs-string">`address`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,       <span class="hljs-comment">-- כתובת</span>
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`idaddresses`</span>),               <span class="hljs-comment">-- הגדרת מפתח ראשי</span>
+  <span class="hljs-keyword">KEY</span> <span class="hljs-string">`user_id`</span> (<span class="hljs-string">`user_id`</span>),                 <span class="hljs-comment">-- יצירת אינדקס על מפתח זר</span>
+  <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`contacts_ibfk_1`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`user_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`users`</span> (<span class="hljs-string">`idusers`</span>) <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">CASCADE</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">CASCADE</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> AUTO_INCREMENT=<span class="hljs-number">10</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4 <span class="hljs-keyword">COLLATE</span>=utf8mb4_0900_ai_ci;
+
+<span class="hljs-comment">-- יצירת טבלת 'users' (משתמשים)</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`users`</span> (
+  <span class="hljs-string">`idusers`</span> <span class="hljs-built_in">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,     <span class="hljs-comment">-- מזהה ייחודי של המשתמש (מפתח ראשי)</span>
+  <span class="hljs-string">`name`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">45</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,               <span class="hljs-comment">-- שם המשתמש</span>
+  <span class="hljs-string">`email`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">45</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,              <span class="hljs-comment">-- כתובת אימייל (חובה וייחודית)</span>
+  <span class="hljs-string">`password`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>,      <span class="hljs-comment">-- סיסמת המשתמש (מאוחסנת כמוצפנת)</span>
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`idusers`</span>),                   <span class="hljs-comment">-- הגדרת מפתח ראשי</span>
+  <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`email_UNIQUE`</span> (<span class="hljs-string">`email`</span>),       <span class="hljs-comment">-- אילוץ ייחודיות על האימייל</span>
+  <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`idusers_UNIQUE`</span> (<span class="hljs-string">`idusers`</span>)    <span class="hljs-comment">-- אילוץ ייחודיות על מזהה המשתמש (אוטומטי)</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> AUTO_INCREMENT=<span class="hljs-number">6</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4 <span class="hljs-keyword">COLLATE</span>=utf8mb4_0900_ai_ci;
+</div></code></pre>
+<div dir="rtl" align="right">
+<p>הסבר מפורט על מבנה הטבלאות:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+    <li>
+        <b>טבלת <code>users</code></b>:
+        <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+            <li><code>idusers</code>: מפתח ראשי מסוג <code>INT</code> עם Auto-Increment, המשמש לזיהוי ייחודי של כל משתמש במערכת.</li>
+            <li><code>name</code>: שדה <code>VARCHAR(45)</code> המיועד לאחסון שם המשתמש.</li>
+            <li><code>email</code>: שדה <code>VARCHAR(45)</code> לאחסון כתובת האימייל. הוא מוגדר כ-<code>NOT NULL</code> וכ-<code>UNIQUE KEY</code>, מה שמבטיח שכל משתמש יירשם עם כתובת אימייל ייחודית אחת בלבד.</li>
+            <li><code>password</code>: שדה <code>VARCHAR(255)</code> המיועד לאחסון הסיסמה המוצפנת של המשתמש. אורך של 255 תווים מתאים לאחסון גיבובי <code>bcrypt</code>, אשר ארוכים יותר מסיסמאות טקסט רגיל.</li>
+        </ul>
+    </li>
+    <li>
+        <b>טבלת <code>contacts</code></b>:
+        <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+            <li><code>idaddresses</code>: מפתח ראשי מסוג <code>INT</code> עם Auto-Increment, המשמש לזיהוי ייחודי של כל איש קשר.</li>
+            <li><code>user_id</code>: מפתח זר מסוג <code>INT</code> המקשר כל איש קשר למשתמש שיצר אותו. זהו שדה <code>NOT NULL</code> כדי להבטיח שכל איש קשר ישויך למשתמש קיים במערכת.</li>
+            <li><code>full_name</code>: שדה <code>VARCHAR(100)</code> לאחסון השם המלא של איש הקשר.</li>
+            <li><code>phone_number</code>: שדה <code>VARCHAR(20)</code> לאחסון מספר הטלפון של איש הקשר.</li>
+            <li><code>address</code>: שדה <code>VARCHAR(255)</code> לאחסון כתובת המגורים של איש הקשר.</li>
+        </ul>
+    </li>
+    <li>
+        <b>קשר גומלין (<code>FOREIGN KEY</code>)</b>: טבלת <code>contacts</code> מקושרת לטבלת <code>users</code> באמצעות מפתח זר <code>user_id</code> המפנה לעמודה <code>idusers</code> בטבלת <code>users</code>.
+        <ul style="direction: rtl; text-align: right; list-style-position: inside;">
+            <li><code>ON DELETE CASCADE</code>: כלל זה קובע שאם משתמש נמחק מטבלת <code>users</code>, כל אנשי הקשר המשויכים אליו בטבלת <code>contacts</code> יימחקו אוטומטית.</li>
+            <li><code>ON UPDATE CASCADE</code>: כלל זה מציין שאם ה-<code>idusers</code> של משתמש משתנה (תרחיש נדיר אך אפשרי), ה-<code>user_id</code> המתאים בטבלת <code>contacts</code> יתעדכן בהתאם.</li>
+        </ul>
+    </li>
+</ul>
+</div>
+<h3 id="52-%D7%9E%D7%95%D7%93%D7%9C%D7%99%D7%9D-%D7%A9%D7%9C-sequelize">5.2 מודלים של Sequelize</h3>
+<p>מודלי Sequelize הם ייצוגים אובייקטיים של הטבלאות במסד הנתונים. הם מאפשרים אינטראקציה נוחה ויעילה עם הנתונים באמצעות שיטות JavaScript, במקום כתיבת שאילתות SQL ישירות.</p>
+<p><strong>מודל User (server/src/models/User.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> { Sequelize, DataTypes } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sequelize'</span>);
+<span class="hljs-keyword">const</span> sequelize = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/database'</span>);
+
+<span class="hljs-keyword">const</span> User = sequelize.define(<span class="hljs-string">'User'</span>, {
+    <span class="hljs-attr">idusers</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.INTEGER,
+        <span class="hljs-attr">autoIncrement</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">primaryKey</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">name</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">45</span>),
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// מותר NULL, אך בקוד הרשמה זה חובה</span>
+    },
+    <span class="hljs-attr">email</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">45</span>),
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// מותר NULL, אך בקוד הרשמה זה חובה</span>
+        <span class="hljs-attr">unique</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">password</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">255</span>), <span class="hljs-comment">// אורך 255 עבור סיסמאות מוצפנות (bcrypt)</span>
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// מותר NULL, אך בפועל הסיסמה תמיד תהיה קיימת</span>
+    }
+}, {
+    <span class="hljs-attr">timestamps</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// מונע הוספת עמודות createdAt ו-updatedAt</span>
+    <span class="hljs-attr">tableName</span>: <span class="hljs-string">'users'</span> <span class="hljs-comment">// מציין במפורש את שם הטבלה במסד הנתונים</span>
+});
+
+<span class="hljs-built_in">module</span>.exports = User;
+</div></code></pre>
+<p><strong>מודל Contact (server/src/models/Contact.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> { Sequelize, DataTypes } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sequelize'</span>);
+<span class="hljs-keyword">const</span> sequelize = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/database'</span>);
+<span class="hljs-keyword">const</span> User = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./User'</span>); <span class="hljs-comment">// ייבוא מודל User לצורך הגדרת קשר גומלין</span>
+
+<span class="hljs-keyword">const</span> Contact = sequelize.define(<span class="hljs-string">'Contact'</span>, {
+    <span class="hljs-attr">idaddresses</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.INTEGER,
+        <span class="hljs-attr">autoIncrement</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">primaryKey</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">user_id</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.INTEGER,
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// חובה לקשר למשתמש</span>
+        <span class="hljs-attr">references</span>: {
+            <span class="hljs-attr">model</span>: User,  <span class="hljs-comment">// מפנה למודל User</span>
+            <span class="hljs-attr">key</span>: <span class="hljs-string">'idusers'</span> <span class="hljs-comment">// עמודת המפתח הראשי במודל User</span>
+        }
+    },
+    <span class="hljs-attr">full_name</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">100</span>),
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">phone_number</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">20</span>),
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">address</span>: {
+        <span class="hljs-attr">type</span>: DataTypes.STRING(<span class="hljs-number">255</span>),
+        <span class="hljs-attr">allowNull</span>: <span class="hljs-literal">true</span>
+    }
+}, {
+    <span class="hljs-attr">timestamps</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// מונע הוספת עמודות createdAt ו-updatedAt</span>
+    <span class="hljs-attr">tableName</span>: <span class="hljs-string">'contacts'</span> <span class="hljs-comment">// מציין במפורש את שם הטבלה במסד הנתונים</span>
+});
+
+<span class="hljs-comment">// הגדרת קשרי גומלין בין המודלים:</span>
+<span class="hljs-comment">// משתמש יכול שיהיו לו הרבה אנשי קשר (One-to-Many)</span>
+User.hasMany(Contact, { <span class="hljs-attr">foreignKey</span>: <span class="hljs-string">'user_id'</span>, <span class="hljs-attr">onDelete</span>: <span class="hljs-string">'CASCADE'</span> });
+<span class="hljs-comment">// איש קשר שייך למשתמש אחד (Many-to-One)</span>
+Contact.belongsTo(User, { <span class="hljs-attr">foreignKey</span>: <span class="hljs-string">'user_id'</span> });
+
+<span class="hljs-built_in">module</span>.exports = Contact;
+</div></code></pre>
+<div dir="rtl" align="right">
+<p>הסבר על מודלי Sequelize:</p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+    <li>
+        <b><code>sequelize.define()</code></b> – פונקציה זו מגדירה את המודל, קובעת את שם הטבלה המתאימה במסד הנתונים (באמצעות <code>tableName</code>), ומגדירה את העמודות השונות המרכיבות את הטבלה.
+    </li>
+    <li>
+        <b><code>DataTypes</code></b> – קובע את סוג הנתונים של כל עמודה (לדוגמה, <code>INTEGER</code>, <code>STRING</code>, <code>TEXT</code>), ומבטיח שהנתונים יאוחסנו בצורה הנכונה במסד הנתונים.
+    </li>
+    <li>
+        <b><code>autoIncrement</code>, <code>primaryKey</code>, <code>unique</code>, <code>allowNull</code></b> – הגדרות אלו קובעות אילוצים ותכונות נוספות לעמודות, כגון האם העמודה היא מפתח ראשי, האם ערכיה צריכים להיות ייחודיים, והאם מותר להכיל ערכי NULL.
+    </li>
+    <li>
+        <b><code>references</code> (במודל <code>Contact</code>)</b> – הגדרה זו מגדירה את המפתח הזר ומקשרת אותו למודל <code>User</code> ולמפתח הראשי שלו (<code>idusers</code>), ובכך יוצרת קשר בין הטבלאות ברמת המודל.
+    </li>
+    <li>
+        <b><code>User.hasMany(Contact)</code> ו-<code>Contact.belongsTo(User)</code></b> – אלו הן הגדרות יחסים מובנות של Sequelize המגדירות את הקשר "אחד לרבים" (One-to-Many) בין משתמשים לאנשי קשר. הגדרות אלו מאפשרות לבצע פעולות כמו שליפת כל אנשי הקשר של משתמש מסוים בקלות ובאופן אינטואיטיבי.
+    </li>
+</ul>
+</div>
+<h2 id="6-%D7%91%D7%93%D7%99%D7%A7%D7%95%D7%AA-%D7%95%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%9E%D7%99%D7%93%D7%A2">6. בדיקות ואבטחת מידע</h2>
+<p>הפרויקט משלב מספר היבטים קריטיים של אבטחה ובדיקות כדי להבטיח את תקינות המערכת, שלמות הנתונים והגנת המידע הרגיש של המשתמשים.</p>
+<h3 id="61-%D7%95%D7%9C%D7%99%D7%93%D7%A6%D7%99%D7%94-%D7%95%D7%91%D7%93%D7%99%D7%A7%D7%95%D7%AA">6.1 ולידציה ובדיקות</h3>
+<p><strong>ולידציית קלט בצד הלקוח (Frontend Validation)</strong>:</p>
+<div dir="rtl" align="right">
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+    <li>
+        הטפסים בדפי הרשמה (<code>signup.js</code>) והתחברות (<code>login.js</code>) כוללים בדיקות JavaScript ראשוניות על שדות הקלט כמו <code>email</code> ו-<code>password</code> (וגם <code>confirmPassword</code> בדף ההרשמה).
+    </li>
+    <li>
+        <b>בדיקת אימייל</b>: מוודא שהפורמט של כתובת האימייל תקין ושהשדה אינו ריק.
+    </li>
+    <li>
+        <b>בדיקת סיסמה</b>: מוודא שאורך הסיסמה עומד בדרישת מינימום של 8 תווים.
+    </li>
+    <li>
+        <b>אישור סיסמה</b>: מוודא ששדה "אישור סיסמה" תואם לערך שהוזן בשדה "סיסמה".
+    </li>
+    <li>
+        <b>משוב למשתמש</b>: הודעות שגיאה רלוונטיות מוצגות למשתמש בזמן אמת, ובנוסף, מוסיפים או מסירים קלאסים (<code>valid</code>/<code>invalid</code>) לשדות הקלט כדי לספק אינדיקציה חזותית ברורה על תקינות הקלט.
+    </li>
+</ul>
+</div>
+<p><strong>דוגמה (מתוך client/js/signup.js)</strong>:</p>
+<pre class="hljs"><code><div>email.onblur = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> emailValue = email.value.trim();
+    <span class="hljs-keyword">let</span> errors = [];
+    err.textContent = <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">if</span> (emailValue === <span class="hljs-string">""</span>) {
+        errors.push(<span class="hljs-string">"לא הכנסת אימייל"</span>);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>.test(emailValue)) {
+        errors.push(<span class="hljs-string">"האימייל שהוכנס אינו תקין"</span>);
+    }
+    err.textContent = errors.join(<span class="hljs-string">"\n"</span>);
+};
+
+password.onblur = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> passwordValue = password.value;
+    <span class="hljs-keyword">let</span> errors = [];
+    err.textContent = <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">if</span> (passwordValue.length &lt; <span class="hljs-number">8</span>) {
+        errors.push(<span class="hljs-string">"הסיסמה חייבת להיות לפחות 8 תווים"</span>);
+    }
+    err.textContent = errors.join(<span class="hljs-string">"\n"</span>);
+};
+
+confirmPassword.onblur = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> passwordValue = password.value;
+    <span class="hljs-keyword">const</span> confirmPasswordValue = confirmPassword.value;
+    <span class="hljs-keyword">let</span> errors = [];
+    err.textContent = <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">if</span> (confirmPasswordValue !== passwordValue) {
+        errors.push(<span class="hljs-string">"הסיסמאות אינן תואמות"</span>);
+    }
+    err.textContent = errors.join(<span class="hljs-string">"\n"</span>);
+};
+</div></code></pre>
+<p><strong>ולידציית קלט בצד השרת (Backend Validation)</strong>:</p>
+<p>בקרת הוספת איש קשר (<code>server/src/controllers/contactController.js</code>) כוללת בדיקה שכל השדות המחוייבים (<code>full_name</code>, <code>phone_number</code>, <code>address</code>) אינם ריקים לפני הוספתם למסד הנתונים. זוהי שכבת אבטחה קריטית וחיונית, שכן ולידציית לקוח ניתנת תמיד לעקיפה על ידי משתמשים בעלי ידע טכני.</p>
+<p><strong>דוגמה (מתוך server/src/controllers/contactController.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> createContact = <span class="hljs-keyword">async</span> (req, res) =&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> { full_name, phone_number, address } = req.body;
+        <span class="hljs-keyword">if</span> (!full_name || !phone_number || !address) {
+            <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">400</span>).json({ <span class="hljs-attr">error</span>: <span class="hljs-string">"All fields are required!"</span> });
+        }
+        <span class="hljs-comment">// ... המשך יצירת איש הקשר</span>
+    } <span class="hljs-keyword">catch</span> (error) { <span class="hljs-comment">/* ... */</span> }
+};
+</div></code></pre>
+<p>בקרת הרשמת משתמשים (<code>server/src/routes/userRoutes.js</code>) כוללת בדיקה חיונית האם כתובת אימייל מסוימת כבר קיימת במערכת, ומונעת יצירת חשבונות כפולים.</p>
+<h3 id="62-%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%9E%D7%99%D7%93%D7%A2">6.2 אבטחת מידע</h3>
+<p><strong>הצפנת סיסמאות (Bcrypt)</strong>:</p>
+<p>סיסמאות המשתמשים אינן נשמרות בטקסט רגיל במסד הנתונים. במקום זאת, הן מוצפנות באמצעות ספריית <code>bcrypt</code>, שהיא פונקציית גיבוב קריפטוגרפית חזקה (cryptographic hash function) המיועדת במיוחד לאבטחת סיסמאות.<br>
+תהליך ההצפנה כולל שימוש ב"מלח" (<code>salt</code>) אקראי, מה שמבטיח שגם אם שתי סיסמאות זהות יוצפנו, הגיבובים שלהן יהיו שונים לחלוטין. מספר סבבי הגיבוב (<code>salt rounds</code>) מוגדר ל-10, מה שמקשה משמעותית על התקפות Brute-Force ו-Rainbow Table.</p>
+<p><strong>דוגמה (מתוך server/src/routes/userRoutes.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// בהרשמה:</span>
+<span class="hljs-keyword">const</span> hashedPassword = <span class="hljs-keyword">await</span> bcrypt.hash(password, <span class="hljs-number">10</span>);
+<span class="hljs-keyword">const</span> newUser = <span class="hljs-keyword">await</span> User.create({ name, email, <span class="hljs-attr">password</span>: hashedPassword });
+
+<span class="hljs-comment">// בהתחברות:</span>
+<span class="hljs-keyword">const</span> validPassword = <span class="hljs-keyword">await</span> bcrypt.compare(password, user.password);
+<span class="hljs-keyword">if</span> (!validPassword) {
+    <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">401</span>).json({ <span class="hljs-attr">error</span>: <span class="hljs-string">"Invalid email or password"</span> });
+}
+</div></code></pre>
+<p><strong>אימות מבוסס JWT (JSON Web Tokens)</strong>:</p>
+<p>לאחר התחברות או הרשמה מוצלחת, השרת מנפיק למשתמש אסימון JWT. אסימון זה מקודד את מזהה המשתמש ופרטים נוספים, ונחתם באמצעות מפתח סודי הידוע רק לשרת.<br>
+האסימון נשמר בצד הלקוח (<code>localStorage</code>) ונשלח עם כל בקשה עוקבת ל-API מוגן (כמו גישה או ניהול אנשי קשר).<br>
+<strong>Middleware לאימות</strong>: פונקציית <code>authenticateUser</code> (<code>server/src/middleware/authMiddleware.js</code>) מופעלת באופן אוטומטי לפני כל נתיב מוגן. היא מוודאת שהאסימון תקף, חתום כהלכה, ולא פג תוקפו. אם האסימון תקין, פרטי המשתמש המפוענחים מוספים לאובייקט <code>req.user</code>, מה שמאפשר לראוטרים ולבקרים לדעת מי המשתמש המחובר כעת.</p>
+<p><strong>דוגמה (מתוך server/src/middleware/authMiddleware.js)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> jwt = <span class="hljs-built_in">require</span>(<span class="hljs-string">'jsonwebtoken'</span>);
+
+<span class="hljs-keyword">const</span> authenticateUser = <span class="hljs-function">(<span class="hljs-params">req, res, next</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> token = req.headers.authorization?.split(<span class="hljs-string">" "</span>)[<span class="hljs-number">1</span>]; <span class="hljs-comment">// שליפת הטוקן מכותרת Authorization</span>
+
+    <span class="hljs-keyword">if</span> (!token) {
+        <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">401</span>).json({ <span class="hljs-attr">error</span>: <span class="hljs-string">'Unauthorized access. Token required.'</span> });
+    }
+
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> decoded = jwt.verify(token, <span class="hljs-string">'your_secret_key'</span>); <span class="hljs-comment">// אימות הטוקן</span>
+        req.user = decoded; <span class="hljs-comment">// הוספת נתוני המשתמש לבקשה</span>
+        next(); <span class="hljs-comment">// המשך לבקר הבא</span>
+    } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">403</span>).json({ <span class="hljs-attr">error</span>: <span class="hljs-string">'Invalid or expired token.'</span> });
+    }
+};
+<span class="hljs-built_in">module</span>.exports = authenticateUser;
+</div></code></pre>
+<p><strong>הפרדת תפקידים/הרשאות (Authorization)</strong>:</p>
+<p>כל בקשות ה-API הנוגעות לאנשי קשר דורשות אימות משתמש.<br>
+כאשר משתמש מנסה לערוך או למחוק איש קשר, הבקר (<code>contactController.js</code>) מוודא לא רק שהמשתמש מחובר, אלא גם ש-<code>user_id</code> של איש הקשר הספציפי תואם למזהה המשתמש שהתקבל מאסימון ה-JWT. זה מבטיח שמשתמשים יכולים לנהל אך ורק את אנשי הקשר שהם עצמם יצרו, ולא של משתמשים אחרים במערכת.</p>
+<p><strong>דוגמה (מתוך server/src/controllers/contactController.js - פונקציית <code>updateContact</code>)</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> updateContact = <span class="hljs-keyword">async</span> (req, res) =&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> contactId = req.params.id;
+        <span class="hljs-keyword">const</span> tokenUserId = req.user.id; <span class="hljs-comment">// מזהה המשתמש מתוך הטוקן</span>
+
+        <span class="hljs-comment">// חיפוש איש הקשר עם מזהה ספציפי וודאות שהוא שייך למשתמש המחובר</span>
+        <span class="hljs-keyword">const</span> contact = <span class="hljs-keyword">await</span> Contact.findOne({ <span class="hljs-attr">where</span>: { <span class="hljs-attr">idaddresses</span>: contactId, <span class="hljs-attr">user_id</span>: tokenUserId } });
+
+        <span class="hljs-keyword">if</span> (!contact) {
+            <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">404</span>).json({ <span class="hljs-attr">error</span>: <span class="hljs-string">"Contact not found or unauthorized to edit"</span> });
+        }
+        <span class="hljs-comment">// ... המשך עדכון איש הקשר</span>
+    } <span class="hljs-keyword">catch</span> (error) { <span class="hljs-comment">/* ... */</span> }
+};
+</div></code></pre>
+<div dir="rtl" align="right">
+<p><strong>הגנת מפתחות סודיים (שיפורים מומלצים)</strong></p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+    <li><b>שיפור קריטי:</b> נכון לעכשיו, מפתח ה-JWT הסודי ופרטי החיבור למסד הנתונים (שם משתמש, סיסמה) מקודדים ישירות בתוך הקוד (<code>server/src/config/database.js</code> ו-<code>server/src/routes/userRoutes.js</code>, <code>server/src/middleware/authMiddleware.js</code>).</li>
+    <li><b>המלצה לאבטחה משופרת:</b> יש להעביר מפתחות סודיים אלה למשתני סביבה (Environment Variables) ולהשתמש בספרייה כמו <code>dotenv</code> כדי לטעון אותם. זה מונע חשיפה פוטנציאלית של מידע רגיש בקוד המקור הנשלח למאגרי קוד.</li>
+</ul>
+<p><strong>העברת JWT מ-<code>localStorage</code> לעוגיות HttpOnly (שיפורים מומלצים)</strong></p>
+<ul style="direction: rtl; text-align: right; list-style-position: inside;">
+    <li><b>שיפור קריטי:</b> אחסון JWT ב-<code>localStorage</code> חושף את היישום להתקפות XSS (Cross-Site Scripting), שבהן תוקף יכול לגשת לאסימון.</li>
+    <li><b>המלצה לאבטחה משופרת:</b> מומלץ לשמור את ה-JWT בעוגיות <code>HttpOnly</code> (שאינן נגישות דרך JavaScript בצד הלקוח), <code>Secure</code> (נשלחות רק בחיבורי HTTPS מוצפנים) ובעלות הגדרת <code>SameSite=Lax</code> או <code>Strict</code> (להגנה מפני התקפות CSRF). השרת יטפל בהגדרת העוגיות ובדיקתן.</li>
+</ul>
+</div>
+<p><strong>שימוש ב-HTTPS (שיפורים מומלצים)</strong>:</p>
+<p>בסביבת פרודקשן (סביבת ייצור), חובה להשתמש בפרוטוקול HTTPS (Secure HTTP) כדי להצפין את כל התקשורת בין הלקוח לשרת. הצפנה זו מונעת ציתות, יירוט ושינוי נתונים רגישים על ידי צדדים שלישיים.</p>
+<h2 id="7-%D7%A1%D7%99%D7%9B%D7%95%D7%9D">7. סיכום</h2>
+<p>פרויקט "ספר הטלפונים הדיגיטלי" מספק פלטפורמה מלאה ופונקציונלית לניהול אנשי קשר אישיים. הוא מדגים שימוש מושכל בטכנולוגיות ווב מודרניות: Node.js ו-Express.js בצד השרת לבניית API חזק, MySQL ו-Sequelize ORM לניהול נתונים באופן יעיל, ו-HTML, CSS, ו-JavaScript בצד הלקוח לבניית ממשק משתמש אינטואיטיבי ומגיב.</p>
+<p>הפרויקט משלב היבטי אבטחה בסיסיים וחשובים הכוללים הצפנת סיסמאות באמצעות ספריית <code>bcrypt</code> חזקה, ואימות משתמשים מאובטח באמצעות JSON Web Tokens (JWT). כמו כן, מיושמת ולידציית קלט הן בצד הלקוח והן בצד השרת כדי להבטיח את תקינות הנתונים.</p>
+<p>ניתן להרחיב את הפרויקט בעתיד על ידי הוספת פונקציונליות מתקדמת כמו חיפוש מורכב, יכולות ייבוא וייצוא של אנשי קשר, סנכרון עם שירותי צד שלישי, ושיפורים נוספים באבטחה וביצועים (כגון שימוש בעוגיות HttpOnly למפתחות JWT ויישום חובה של HTTPS בכל הסביבות).</p>
+</div>
+
+</div><div class="mermaidTooltip" style="opacity: 0;"></div></body></html>
