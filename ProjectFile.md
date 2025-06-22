@@ -107,26 +107,6 @@ phone-book-app/
 └── README.md
 ```
 
-<<<<<<< HEAD
-**הסבר על כל תיקייה**:
-* `client/` - מכיל את כל קבצי צד הלקוח (Frontend) של היישום.
-    * `CustomElements/` - רכיבי ווב מותאמים אישית הניתנים לשימוש חוזר, כגון סרגל הניווט.
-    * `css/` - קבצי סגנון CSS ייעודיים לכל דף.
-    * `imgs/` - תמונות המשמשות ביישום, כולל תמונת ההשראה לעמוד הבית.
-    * `js/` - קבצי JavaScript המטפלים בלוגיקת צד הלקוח, כמו ולידציה ואינטראקציה עם השרת.
-    * `pages/` - קבצי HTML המהווים את מבנה הדפים השונים של היישום.
-* `server/` - מכיל את כל קבצי צד השרת (Backend) של היישום.
-    * `src/` - קבצי קוד המקור העיקריים של השרת.
-        * `config/` - קבצי תצורה, כולל הגדרות חיבור למסד הנתונים.
-        * `controllers/` - מכיל את הלוגיקה העסקית והטיפול בבקשות HTTP עבור משתמשים ואנשי קשר (MVC Controller).
-        * `middleware/` - פונקציות Middleware לטיפול בבקשות, כמו אימות משתמשים באמצעות JWT.
-        * `models/` - הגדרות מודלים של מסד הנתונים באמצעות Sequelize ORM (MVC Model).
-        * `routes/` - הגדרת נתיבי API לטיפול בבקשות HTTP (MVC Router).
-    * `package.json` - קובץ הגדרות פרויקט ה-Node.js, המפרט את התלויות והסקריפטים להפעלה.
-    * `server.js` - נקודת הכניסה העיקרית של יישום השרת, המגדירה את השרת, הנתיבים הראשיים וחיבורי ה-API.
-* `MySqlSetUp.sql` - קובץ סקריפט SQL המשמש להגדרת מסד הנתונים והטבלאות ב-MySQL.
-* `README.md` - קובץ זה, המכיל תיעוד מקיף של הפרויקט.
-=======
 <div dir="rtl" align="right">
 
 <ul style="direction: rtl; text-align: right; list-style-position: inside;">
@@ -159,7 +139,6 @@ phone-book-app/
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 </div>
 
@@ -207,16 +186,6 @@ graph TD
 
 ### 3.1 דפי HTML
 
-<<<<<<< HEAD
-**דפים עיקריים**:
-* `index.html` – עמוד הבית.
-* `login.html` – טופס התחברות.
-* `signup.html` – טופס הרשמה.
-* `contacts.html` – תצוגת רשימת אנשי הקשר.
-* `newContact.html` – טופס להוספת איש קשר.
-* `editContact.html` – טופס לעריכת איש קשר.
-* `404.html` – עמוד שגיאה.
-=======
 <div dir="rtl" align="right">
 
 **דפים עיקריים**:
@@ -231,7 +200,6 @@ graph TD
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 **קטע קוד לדוגמה - דף התחברות (`login.html`)**:
 </div>
@@ -519,27 +487,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `idusers_UNIQUE` (`idusers`)    -- אילוץ ייחודיות על מזהה המשתמש (אוטומטי)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
-<<<<<<< HEAD
-
-הסבר מפורט על מבנה הטבלאות:
-
-* **טבלת `users`**:
-    * `idusers`: מפתח ראשי מסוג `INT` עם Auto-Increment, המשמש לזיהוי ייחודי של כל משתמש במערכת.
-    * `name`: שדה `VARCHAR(45)` המיועד לאחסון שם המשתמש.
-    * `email`: שדה `VARCHAR(45)` לאחסון כתובת האימייל. הוא מוגדר כ-`NOT NULL` וכ-`UNIQUE KEY`, מה שמבטיח שכל משתמש יירשם עם כתובת אימייל ייחודית אחת בלבד.
-    * `password`: שדה `VARCHAR(255)` המיועד לאחסון הסיסמה המוצפנת של המשתמש. אורך של 255 תווים מתאים לאחסון גיבובי `bcrypt`, אשר ארוכים יותר מסיסמאות טקסט רגיל.
-
-* **טבלת `contacts`**:
-    * `idaddresses`: מפתח ראשי מסוג `INT` עם Auto-Increment, המשמש לזיהוי ייחודי של כל איש קשר.
-    * `user_id`: מפתח זר מסוג `INT` המקשר כל איש קשר למשתמש שיצר אותו. זהו שדה `NOT NULL` כדי להבטיח שכל איש קשר ישויך למשתמש קיים במערכת.
-    * `full_name`: שדה `VARCHAR(100)` לאחסון השם המלא של איש הקשר.
-    * `phone_number`: שדה `VARCHAR(20)` לאחסון מספר הטלפון של איש הקשר.
-    * `address`: שדה `VARCHAR(255)` לאחסון כתובת המגורים של איש הקשר.
-
-* **קשר גומלין (FOREIGN KEY)**: טבלת `contacts` מקושרת לטבלת `users` באמצעות מפתח זר `user_id` המפנה לעמודה `idusers` בטבלת `users`.
-    * `ON DELETE CASCADE`: כלל זה קובע שאם משתמש נמחק מטבלת `users`, כל אנשי הקשר המשויכים אליו בטבלת `contacts` יימחקו אוטומטית.
-    * `ON UPDATE CASCADE`: כלל זה מציין שאם ה-`idusers` של משתמש משתנה (תרחיש נדיר אך אפשרי), ה-`user_id` המתאים בטבלת `contacts` יתעדכן בהתאם.
-=======
 <div dir="rtl" align="right">
 
 הסבר מפורט על מבנה הטבלאות:
@@ -574,7 +521,6 @@ CREATE TABLE `users` (
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 ### 5.2 מודלים של Sequelize
 
@@ -659,16 +605,6 @@ Contact.belongsTo(User, { foreignKey: 'user_id' });
 
 module.exports = Contact;
 ```
-<<<<<<< HEAD
-
-הסבר על מודלי Sequelize:
-
-* `sequelize.define()`: פונקציה זו מגדירה את המודל, קובעת את שם הטבלה המתאימה במסד הנתונים (באמצעות `tableName`), ומגדירה את העמודות השונות המרכיבות את הטבלה.
-* `DataTypes`: קובע את סוג הנתונים של כל עמודה (לדוגמה, `INTEGER`, `STRING`, `TEXT`), ומבטיח שהנתונים יאוחסנו בצורה הנכונה במסד הנתונים.
-* `autoIncrement`, `primaryKey`, `unique`, `allowNull`: הגדרות אלו קובעות אילוצים ותכונות נוספות לעמודות, כגון האם העמודה היא מפתח ראשי, האם ערכיה צריכים להיות ייחודיים, והאם מותר להכיל ערכי NULL.
-* `references` (במודל `Contact`): הגדרה זו מגדירה את המפתח הזר ומקשרת אותו למודל `User` ולמפתח הראשי שלו (`idusers`), ובכך יוצרת קשר בין הטבלאות ברמת המודל.
-* `User.hasMany(Contact)` ו-`Contact.belongsTo(User)`: אלו הן הגדרות יחסים מובנות של Sequelize המגדירות את הקשר "אחד לרבים" (One-to-Many) בין משתמשים לאנשי קשר. הגדרות אלו מאפשרות לבצע פעולות כמו שליפת כל אנשי הקשר של משתמש מסוים בקלות ובאופן אינטואיטיבי.
-=======
 <div dir="rtl" align="right">
 
 הסבר על מודלי Sequelize:
@@ -692,7 +628,6 @@ module.exports = Contact;
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 ## 6. בדיקות ואבטחת מידע
 
@@ -701,14 +636,6 @@ module.exports = Contact;
 ### 6.1 ולידציה ובדיקות
 
 **ולידציית קלט בצד הלקוח (Frontend Validation)**:
-<<<<<<< HEAD
-
-הטפסים בדפי הרשמה (`signup.js`) והתחברות (`login.js`) כוללים בדיקות JavaScript ראשוניות על שדות הקלט כמו `email` ו-`password` (וגם `confirmPassword` בדף ההרשמה).
-* **בדיקת אימייל**: מוודא שהפורמט של כתובת האימייל תקין ושהשדה אינו ריק.
-* **בדיקת סיסמה**: מוודא שאורך הסיסמה עומד בדרישת מינימום של 8 תווים.
-* **אישור סיסמה**: מוודא ששדה "אישור סיסמה" תואם לערך שהוזן בשדה "סיסמה".
-* **משוב למשתמש**: הודעות שגיאה רלוונטיות מוצגות למשתמש בזמן אמת, ובנוסף, מוסיפים או מסירים קלאסים (`valid`/`invalid`) לשדות הקלט כדי לספק אינדיקציה חזותית ברורה על תקינות הקלט.
-=======
 <div dir="rtl" align="right">
 
 <ul style="direction: rtl; text-align: right; list-style-position: inside;">
@@ -730,7 +657,6 @@ module.exports = Contact;
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 **דוגמה (מתוך client/js/signup.js)**:
 
@@ -862,18 +788,6 @@ const updateContact = async (req, res) => {
     } catch (error) { /* ... */ }
 };
 ```
-<<<<<<< HEAD
-
-**הגנת מפתחות סודיים (שיפורים מומלצים)**:
-
-* **שיפור קריטי**: נכון לעכשיו, מפתח ה-JWT הסודי ופרטי החיבור למסד הנתונים (שם משתמש, סיסמה) מקודדים ישירות בתוך הקוד (`server/src/config/database.js` ו-`server/src/routes/userRoutes.js`, `server/src/middleware/authMiddleware.js`).
-* **המלצה לאבטחה משופרת**: יש להעביר מפתחות סודיים אלה למשתני סביבה (Environment Variables) ולהשתמש בספרייה כמו `dotenv` כדי לטעון אותם. זה מונע חשיפה פוטנציאלית של מידע רגיש בקוד המקור הנשלח למאגרי קוד.
-
-**העברת JWT מ-`localStorage` לעוגיות HttpOnly (שיפורים מומלצים)**:
-
-* **שיפור קריטי**: אחסון JWT ב-`localStorage` חושף את היישום להתקפות XSS (Cross-Site Scripting), שבהן תוקף יכול לגשת לאסימון.
-* **המלצה לאבטחה משופרת**: מומלץ לשמור את ה-JWT בעוגיות `HttpOnly` (שאינן נגישות דרך JavaScript בצד הלקוח), `Secure` (נשלחות רק בחיבורי HTTPS מוצפנים) ובעלות הגדרת `SameSite=Lax` או `Strict` (להגנה מפני התקפות CSRF). השרת יטפל בהגדרת העוגיות ובדיקתן.
-=======
 <div dir="rtl" align="right">
 
 **הגנת מפתחות סודיים (שיפורים מומלצים)**
@@ -891,7 +805,6 @@ const updateContact = async (req, res) => {
 </ul>
 
 </div>
->>>>>>> a6ebead16cdd1bf9cc2c447cf9e663c45003b215
 
 **שימוש ב-HTTPS (שיפורים מומלצים)**:
 
