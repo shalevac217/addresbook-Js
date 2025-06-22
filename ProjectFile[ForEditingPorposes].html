@@ -775,6 +775,159 @@ async function deleteContact(contactId) {
     }
 }
 </code></pre>
+<h2>✳️ דף ההרשמה – signup.html + signup.js + /api/users/signup</h2>
+
+<h3>קוד JavaScript</h3>
+<pre><code>document.querySelector("form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const emailValue = email.value.trim();
+    const fullNameValue = fullName.value.trim();
+    const passwordValue = password.value;
+    const confirmPasswordValue = confirmPassword.value;
+
+    if (passwordValue !== confirmPasswordValue) {
+        err.textContent = "הסיסמאות אינן תואמות";
+        return;
+    }
+
+    try {
+        const signupResponse = await fetch("/api/users/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: emailValue, name: fullNameValue, password: passwordValue }),
+        });
+
+        const signupData = await signupResponse.json();
+        if (!signupResponse.ok || !signupData.token) {
+            err.textContent = signupData.error || "שגיאה בהרשמה.";
+            return;
+        }
+
+        localStorage.setItem("token", signupData.token);
+        localStorage.setItem("userId", signupData.userId);
+        window.location.href = "/contacts";
+    } catch (error) {
+        err.textContent = "שגיאה בהרשמה, נסה שוב.";
+    }
+});</code></pre>
+
+<h3>הסבר:</h3>
+<ul>
+  <li>ביצוע ולידציה: אימות אימייל, סיסמה ואישור סיסמה.</li>
+  <li>בשליחה – הנתונים נשלחים לשרת ב־<code>/api/users/signup</code>.</li>
+  <li>אם ההרשמה הצליחה, נשמרים <code>token</code> ו־<code>userId</code> ב־localStorage והמשתמש מנותב לעמוד אנשי הקשר.</li>
+</ul>
+
+<hr>
+
+<h2>✳️ דף ההתחברות – login.html + login.js + /api/users/login</h2>
+
+<h3>קוד JavaScript</h3>
+<pre><code>document.querySelector("form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const errorDiv = document.getElementById("err");
+
+    try {
+        const response = await fetch('/api/users/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userId", data.userId);
+            window.location.href = "contacts";
+        } else {
+            errorDiv.innerText = data.error;
+        }
+    } catch (error) {
+        errorDiv.innerText = "שגיאה בהתחברות. נסה שוב.";
+    }
+});</code></pre>
+
+<h3>הסבר:</h3>
+<ul>
+  <li>המשתמש מזין אימייל וסיסמה בטופס התחברות.</li>
+  <li>הקוד שולח את הנתונים לשרת בכתובת <code>/api/users/login</code> ומקבל תגובה.</li>
+  <li>אם ההתחברות הצליחה – הפרטים נשמרים ב־localStorage לצורך המשך ניווט מאובטח באתר.</li>
+</ul>
+
+<hr>
+
+<h2>✳️ דף אנשי הקשר – contacts.html + contacts.js + /api/contacts/user/:userId</h2>
+
+<h3>קוד JavaScript</h3>
+<pre><code>document.addEventListener("DOMContentLoaded", async function () {
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("userId");
+
+    if (!token || !userId) {
+        window.location.href = "/login";
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/contacts/user/${userId}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        const contacts = await response.json();
+        displayContacts(contacts);
+    } catch (error) {
+        console.error("שגיאה בטעינת אנשי הקשר:", error);
+    }
+
+    document.getElementById("addContactBtn").addEventListener("click", function () {
+        window.location.href = "/add-contact";
+    });
+});
+
+function displayContacts(contacts) {
+    const tableBody = document.querySelector("table");
+    contacts.forEach(contact =&gt; {
+        const row = document.createElement("tr");
+        row.classList.add("Data");
+        row.innerHTML = `
+            &lt;th&gt;${contact.full_name}&lt;/th&gt;
+            &lt;th&gt;${contact.phone_number}&lt;/th&gt;
+            &lt;th&gt;${contact.address}&lt;/th&gt;
+            &lt;th&gt;
+                &lt;button onclick="editContact('${contact.idaddresses}')"&gt;✏️ ערוך&lt;/button&gt;
+                &lt;button onclick="deleteContact('${contact.idaddresses}')"&gt;🗑️ מחק&lt;/button&gt;
+            &lt;/th&gt;
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function editContact(id) {
+    window.location.href = `/edit-contact?id=${id}`;
+}
+
+async function deleteContact(contactId) {
+    if (!confirm("האם אתה בטוח שברצונך למחוק את איש הקשר הזה?")) return;
+    try {
+        const token = localStorage.getItem("token");
+        await fetch(`/api/contacts/${contactId}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        location.reload();
+    } catch (error) {
+        console.error("שגיאה במחיקה:", error);
+    }
+}</code></pre>
+
+<h3>הסבר:</h3>
+<ul>
+  <li>הקוד טוען את אנשי הקשר מהשרת בהתבסס על ה־token וה־userId.</li>
+  <li>מציג את הנתונים בטבלת HTML, עם כפתורים לעריכה ומחיקה.</li>
+  <li>הפעולות מתבצעות באמצעות Fetch API אל הנתיבים המוגנים.</li>
+</ul>
 
 <p><strong>סיכום:</strong></p>
 <ul>
